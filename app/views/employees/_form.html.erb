@@ -11,29 +11,29 @@
     </div>
   <% end %>
 
-  <div class="my-5">
+  <div class="my-5 flex flex-col">
     <%= form.label :user_name %>
-    <%= form.text_field :user_name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": employee.errors[:user_name].none?, "border-red-400 focus:outline-red-600": employee.errors[:user_name].any?}] %>
+    <%= form.text_field :user_name, class: "neu-input text-[#B2B2B2]" %>
   </div>
 
-  <div class="my-5">
+  <div class="my-5 flex flex-col">
     <%= form.label :first_name %>
-    <%= form.text_field :first_name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": employee.errors[:first_name].none?, "border-red-400 focus:outline-red-600": employee.errors[:first_name].any?}] %>
+    <%= form.text_field :first_name, class: "neu-input text-[#B2B2B2]" %>
   </div>
 
-  <div class="my-5">
+  <div class="my-5 flex flex-col">
     <%= form.label :last_name %>
-    <%= form.text_field :last_name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": employee.errors[:last_name].none?, "border-red-400 focus:outline-red-600": employee.errors[:last_name].any?}] %>
+    <%= form.text_field :last_name, class: "neu-input text-[#B2B2B2]" %>
   </div>
 
-  <div class="my-5">
+  <div class="my-5 flex flex-col">
     <%= form.label :salary %>
-    <%= form.text_field :salary, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": employee.errors[:salary].none?, "border-red-400 focus:outline-red-600": employee.errors[:salary].any?}] %>
+    <%= form.text_field :salary, class: "neu-input text-[#B2B2B2]" %>
   </div>
 
-  <div class="my-5">
+  <div class="my-5 flex flex-col">
     <%= form.label :position %>
-    <%= form.text_field :position, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": employee.errors[:position].none?, "border-red-400 focus:outline-red-600": employee.errors[:position].any?}] %>
+    <%= form.text_field :position, class: "neu-input text-[#B2B2B2]" %>
   </div>
 
   <div class="inline">
