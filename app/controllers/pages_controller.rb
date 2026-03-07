@@ -12,8 +12,7 @@ class PagesController < ApplicationController
       return render :home, status: :unprocessable_entity
     end
 
-    if employee.user_name == "admin"
-      Rails.logger.debug "redirect to index"
+    if employee.position == "admin"
       redirect_to employees_path
     else
       Rails.logger.debug "redirect to show #{employee.id}"
