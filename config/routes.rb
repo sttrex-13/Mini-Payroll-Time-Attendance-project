@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :time_attendances
   get "pages/home"
   post "/login", to: "pages#login", as: :login
   resources :employees

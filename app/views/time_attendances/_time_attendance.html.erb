@@ -1,0 +1,22 @@
+<div id="<%= dom_id time_attendance %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">Employee:</strong>
+    <%= time_attendance.employee_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Work date:</strong>
+    <%= time_attendance.work_date %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Check in at:</strong>
+    <%= time_attendance.check_in_at %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Check out at:</strong>
+    <%= time_attendance.check_out_at %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Overtime hours:</strong>
+    <%= time_attendance.overtime_hours %>
+  </div>
+</div>
