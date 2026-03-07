@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     employee = Employee.find_by(user_name: username)
 
     if !employee
-      flash.now[:alert] = "Username not found"
+      flash.now[:alert] = "User not found. Please try again or register."
       return render :home, status: :unprocessable_entity
     end
 
