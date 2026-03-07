@@ -23,17 +23,12 @@
 
   <div class="my-5">
     <%= form.label :check_in_at %>
-    <%= form.datetime_field :check_in_at, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": time_attendance.errors[:check_in_at].none?, "border-red-400 focus:outline-red-600": time_attendance.errors[:check_in_at].any?}] %>
+    <%= form.time_field :check_in_at, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": time_attendance.errors[:check_in_at].none?, "border-red-400 focus:outline-red-600": time_attendance.errors[:check_in_at].any?}] %>
   </div>
 
   <div class="my-5">
     <%= form.label :check_out_at %>
-    <%= form.datetime_field :check_out_at, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": time_attendance.errors[:check_out_at].none?, "border-red-400 focus:outline-red-600": time_attendance.errors[:check_out_at].any?}] %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :overtime_hours %>
-    <%= form.text_field :overtime_hours, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": time_attendance.errors[:overtime_hours].none?, "border-red-400 focus:outline-red-600": time_attendance.errors[:overtime_hours].any?}] %>
+    <%= form.time_field :check_out_at, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": time_attendance.errors[:check_out_at].none?, "border-red-400 focus:outline-red-600": time_attendance.errors[:check_out_at].any?}] %>
   </div>
 
   <div class="inline">
