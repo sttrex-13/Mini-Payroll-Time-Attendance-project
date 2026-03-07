@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "pages/home"
+  post "/login", to: "pages#login", as: :login
   resources :employees
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
