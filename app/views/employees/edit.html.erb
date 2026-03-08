@@ -1,0 +1,88 @@
+<% content_for :title, "Editing employee" %>
+
+<div class="w-full max-w-[1200px] px-6 py-10">
+  <div class="flex justify-start mb-8">
+    <div class="relative group">
+      <%= link_to @employee,
+                  class: "neu-button flex items-center justify-center w-[72px] h-[72px]" do %>
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="w-5 h-5 rotate-180"
+             fill="#8F8F8F"
+             viewBox="0 0 24 24">
+          <path d="M23.124,9.879,18.538,5.293,17.124,6.707l4.262,4.263L0,11l0,2,21.446-.03-4.323,4.323,1.414,1.414,4.587-4.586A3.007,3.007,0,0,0,23.124,9.879Z"/>
+        </svg>
+      <% end %>
+
+      <span class="absolute top-1/2 right-22 -translate-y-1/2 whitespace-nowrap rounded-full bg-[#D4C8FF] px-3 py-2 text-[12px] text-white opacity-0 transition group-hover:opacity-100">
+        Back to Employee
+      </span>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16 items-center">
+    <div class="w-full">
+      <div class="neu-card p-8 md:p-10">
+        <div class="mb-8">
+          <p class="text-[14px] font-medium tracking-[0.08em] text-[#A0A0A0] uppercase">
+            Employee Update
+          </p>
+
+          <h1 class="mt-2 text-[36px] font-semibold leading-11 text-[#6F6F6F]">
+            Edit Employee
+          </h1>
+
+          <p class="mt-3 text-[16px] leading-7 text-[#A3A3A3]">
+            Update employee information to keep attendance records and payroll details accurate.
+          </p>
+        </div>
+
+        <%= render "form", employee: @employee %>
+      </div>
+    </div>
+
+    <div class="flex h-full items-center">
+      <div class="max-w-115">
+        <p class="text-[14px] font-medium tracking-[0.08em] text-[#A0A0A0] uppercase">
+          Quick Overview
+        </p>
+
+        <h2 class="mt-2 text-[32px] font-semibold leading-10 text-[#6F6F6F]">
+          Keep employee details up to date
+        </h2>
+
+        <p class="mt-4 text-[16px] leading-7.5 text-[#9B9B9B]">
+          Edit employee information anytime to ensure attendance tracking, salary details, and team records stay organized.
+        </p>
+
+        <div class="mt-8 space-y-4">
+          <div class="neu-info-card">
+            <div>
+              <p class="text-[16px] font-semibold text-[#7C7C7C]">Accurate Records</p>
+              <p class="mt-1 text-[14px] leading-6 text-[#A3A3A3]">
+                Keep employee names, roles, and salary information consistent across the system.
+              </p>
+            </div>
+          </div>
+
+          <div class="neu-info-card">
+            <div>
+              <p class="text-[16px] font-semibold text-[#7C7C7C]">Attendance Ready</p>
+              <p class="mt-1 text-[14px] leading-6 text-[#A3A3A3]">
+                Updated employee details help maintain reliable check-in and check-out records.
+              </p>
+            </div>
+          </div>
+
+          <div class="neu-info-card">
+            <div>
+              <p class="text-[16px] font-semibold text-[#7C7C7C]">Payroll Organized</p>
+              <p class="mt-1 text-[14px] leading-6 text-[#A3A3A3]">
+                Make sure salary-related information stays aligned with the latest employee profile.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

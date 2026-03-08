@@ -1,0 +1,72 @@
+
+<div class="flex flex-col rounded-xl">
+  <p class="flex justify-start pb-6 text-[#b2b2b2] text-[20px]">
+    Simple time tracking and payroll made easy. <br>
+    Check in, check out, and let us calculate your salary automatically.
+  </p>
+  <%= form_with url: login_path, method: :post, class: "flex items-center gap-5" do |form| %>
+
+    <%= form.text_field :username,
+                        placeholder: "input your username",
+                        class: "neu-input text-[#B2B2B2] w-[500px] h-[50px] pl-8" %>
+
+    <div class="relative group">
+
+      <%= form.button "", class: "neu-button flex items-center justify-center w-[50px] h-[50px]" do %>
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="w-4 h-4"
+             fill="#b2b2b2"
+             viewBox="0 0 24 24">
+
+          <g id="_01_align_center" data-name="01 align center">
+            <path d="M23.124,9.879,18.538,5.293,17.124,6.707l4.262,4.263L0,11l0,2,21.446-.03-4.323,4.323,1.414,1.414,4.587-4.586A3.007,3.007,0,0,0,23.124,9.879Z"/>
+          </g>
+
+        </svg>
+      <% end %>
+
+      <span class="absolute -top-10 left-1/2 -translate-x-1/2
+                   opacity-0 group-hover:opacity-100 rounded-full
+                   bg-[#D4C8FF] text-white text-xs px-2 py-1 transition">
+        Login
+      </span>
+
+    </div>
+
+    <div class="relative group">
+
+      <%= link_to new_employee_path,
+                  class: "neu-button flex items-center justify-center  w-[50px] h-[50px]" do %>
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="w-4 h-4"
+             fill="#b2b2b2"
+             viewBox="0 0 24 24">
+
+          <g id="_01_align_center" data-name="01 align center">
+            <path d="M9,12A6,6,0,1,0,3,6,6.006,6.006,0,0,0,9,12ZM9,2A4,4,0,1,1,5,6,4,4,0,0,1,9,2Z"/>
+            <polygon points="21 10 21 7 19 7 19 10 16 10 16 12 19 12 19 15 21 15 21 12 24 12 24 10 21 10"/>
+            <path d="M13.043,14H4.957A4.963,4.963,0,0,0,0,18.957V24H2V18.957A2.96,2.96,0,0,1,4.957,16h8.086A2.96,2.96,0,0,1,16,18.957V24h2V18.957A4.963,4.963,0,0,0,13.043,14Z"/>
+          </g>
+
+        </svg>
+
+      <% end %>
+
+      <span class="absolute -top-10 left-1/2 -translate-x-1/2 w-36
+                   opacity-0 group-hover:opacity-100 rounded-full
+                   bg-[#D4C8FF] text-white text-xs px-2 py-1 transition">
+        Create New Employee
+      </span>
+
+    </div>
+
+  <% end %>
+
+  <% if flash[:alert] %>
+    <p class="flex justify-start pl-10 pt-4 text-red-300 text-sm">
+      <%= flash[:alert] %>
+    </p>
+  <% end %>
+
+</div>

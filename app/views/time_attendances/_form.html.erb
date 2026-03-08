@@ -1,0 +1,49 @@
+<%= form_with(model: [@employee, time_attendance], class: "space-y-6") do |form| %>
+  <% if time_attendance.errors.any? %>
+    <div id="error_explanation" class="rounded-[24px] border border-[#F2B8B5] bg-[#FFF4F4] px-5 py-4">
+      <h2 class="text-[14px] font-semibold text-[#D16B6B]">
+        <%= pluralize(time_attendance.errors.count, "error") %> prevented this attendance record from being saved.
+      </h2>
+
+      <ul class="mt-2 list-disc pl-5 text-[14px] text-[#D16B6B]">
+        <% time_attendance.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="space-y-5">
+
+    <div>
+      <label class="mb-2 block pl-3 text-[14px] font-medium text-[#9A9A9A]">
+        Work Date
+      </label>
+      <%= form.date_field :work_date,
+                          class: "neu-input-field #{time_attendance.errors[:work_date].any? ? 'neu-input-error' : ''}" %>
+    </div>
+
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+      <div>
+        <label class="mb-2 block pl-3 text-[14px] font-medium text-[#9A9A9A]">
+          Check In
+        </label>
+        <%= form.time_field :check_in_at,
+                            class: "neu-input-field #{time_attendance.errors[:check_in_at].any? ? 'neu-input-error' : ''}" %>
+      </div>
+
+      <div>
+        <label class="mb-2 block pl-3 text-[14px] font-medium text-[#9A9A9A]">
+          Check Out
+        </label>
+        <%= form.time_field :check_out_at,
+                            class: "neu-input-field #{time_attendance.errors[:check_out_at].any? ? 'neu-input-error' : ''}" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-4">
+    <%= form.button "Create Attendance",
+                    class: "neu-primary-button w-full" %>
+  </div>
+<% end %>

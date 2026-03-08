@@ -1,0 +1,42 @@
+<%= form_with(model: employee, class: "contents") do |form| %>
+  <% if employee.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% employee.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5 flex flex-row w-100 justify-between items-center">
+    <%= form.label :user_name, class:"text-[#B2B2B2]" %>
+    <%= form.text_field :user_name, class: "neu-input text-[#B2B2B2] w-[300px] h-[50px] pl-6" %>
+  </div>
+
+  <div class="my-5 flex flex-row w-100 justify-between items-center">
+    <%= form.label :first_name, class:"text-[#B2B2B2]" %>
+    <%= form.text_field :first_name, class: "neu-input text-[#B2B2B2] w-[300px] h-[50px] pl-6" %>
+  </div>
+
+  <div class="my-5 flex flex-row w-100 justify-between items-center">
+    <%= form.label :last_name, class:"text-[#B2B2B2]" %>
+    <%= form.text_field :last_name, class: "neu-input text-[#B2B2B2] w-[300px] h-[50px] pl-6" %>
+  </div>
+
+  <div class="my-5 flex flex-row w-100 justify-between items-center">
+    <%= form.label :salary, class:"text-[#B2B2B2]" %>
+    <%= form.text_field :salary, class: "neu-input text-[#B2B2B2] w-[300px] h-[50px] pl-6" %>
+  </div>
+
+  <div class="my-5 flex flex-row w-100 justify-between items-center">
+    <%= form.label :position, class:"text-[#B2B2B2]" %>
+    <%= form.text_field :position, class: "neu-input text-[#B2B2B2] w-[300px] h-[50px] pl-6" %>
+  </div>
+
+  <div class="my-5 w-100 grid justify-items-end-safe ">
+    <%= form.submit "Submit", class: "neu-input text-[#B2B2B2] w-50 h-[50px] " %>
+  </div>
+<% end %>

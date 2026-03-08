@@ -8,3 +8,230 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+.neu-input {
+    box-sizing: border-box;
+    background: #ECEDF1;
+    border: 1px solid #D4C8FF;
+    border-radius: 50px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: all 0.25s ease;
+    box-shadow: -5px 5px 10px rgba(212, 213, 217, 0.2),
+    5px -5px 10px rgba(212, 213, 217, 0.2),
+    -5px -5px 10px rgba(255, 255, 255, 0.9),
+    5px 5px 13px rgba(212, 213, 217, 0.9),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 2px rgba(212, 213, 217, 0.5);
+}
+
+.neu-input:hover,
+.neu-input:focus,
+.neu-input:active,
+.neu-input:focus-visible {
+    background: linear-gradient(135deg, #E0E1E5 0%, #F8F9FD 100%);
+    outline: none !important;
+    border: 1px solid #D4C8FF;
+
+    box-shadow: -5px 5px 10px rgba(212, 213, 217, 0.2),
+    5px -5px 10px rgba(212, 213, 217, 0.2),
+    -5px -5px 10px rgba(255, 255, 255, 0.9),
+    5px 5px 13px rgba(212, 213, 217, 0.9),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 2px rgba(212, 213, 217, 0.5);
+
+}
+
+.neu-button {
+    box-sizing: border-box;
+    background: #ECEDF1;
+    border: 1px solid #D4C8FF;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -5px 5px 10px rgba(212, 213, 217, 0.2),
+    5px -5px 10px rgba(212, 213, 217, 0.2),
+    -5px -5px 10px rgba(255, 255, 255, 0.9),
+    5px 5px 13px rgba(212, 213, 217, 0.9),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 2px rgba(212, 213, 217, 0.5);
+    transition: all 0.25s ease;
+}
+
+.neu-button:hover {
+    background: linear-gradient(135deg, #E0E1E5 0%, #F8F9FD 100%);
+}
+
+.neu-button:active {
+    box-shadow: inset 2px 2px 5px rgba(212, 213, 217, 0.6),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+}
+
+.neu-card {
+    border: 1px solid #E2D9FF;
+    border-radius: 36px;
+    background: #ECEDF1;
+    box-shadow:
+            -12px 12px 24px rgba(212, 213, 217, 0.42),
+            12px -12px 24px rgba(255, 255, 255, 0.9),
+            inset 1px 1px 2px rgba(255, 255, 255, 0.4),
+            inset -1px -1px 2px rgba(212, 213, 217, 0.35);
+}
+
+.neu-attendance-row {
+    border: 1px solid #DDD2FF;
+    border-radius: 9999px;
+    background: #ECEDF1;
+    box-shadow:
+            -8px 8px 16px rgba(212, 213, 217, 0.22),
+            8px -8px 16px rgba(255, 255, 255, 0.82);
+}
+
+.neu-empty-state {
+    border: 1px solid #E2D9FF;
+    border-radius: 32px;
+    background: #ECEDF1;
+    box-shadow:
+            -10px 10px 18px rgba(212, 213, 217, 0.25),
+            10px -10px 18px rgba(255, 255, 255, 0.82);
+}
+
+.neu-pill-success {
+    border: 1px solid #9ED9AA;
+    border-radius: 9999px;
+    background: #ECEDF1;
+    box-shadow:
+            -6px 6px 12px rgba(212, 213, 217, 0.18),
+            6px -6px 12px rgba(255, 255, 255, 0.78);
+    transition: all 0.2s ease;
+}
+
+.neu-pill-success:hover {
+    transform: translateY(-1px);
+}
+
+.neu-pill-waring {
+    border: 1px solid #FFB55A;
+    border-radius: 9999px;
+    background: #ECEDF1;
+    box-shadow:
+            -6px 6px 12px rgba(212, 213, 217, 0.18),
+            6px -6px 12px rgba(255, 255, 255, 0.78);
+    transition: all 0.2s ease;
+}
+
+.neu-pill-waring:hover {
+    transform: translateY(-1px);
+}
+
+.neu-button-danger {
+    box-sizing: border-box;
+    border: 1px solid #E9CFCF;
+    border-radius: 9999px;
+    background: #ECEDF1;
+    cursor: pointer;
+    box-shadow:
+            -5px 5px 10px rgba(212, 213, 217, 0.18),
+            5px -5px 10px rgba(212, 213, 217, 0.18),
+            -5px -5px 10px rgba(255, 255, 255, 0.85),
+            5px 5px 13px rgba(212, 213, 217, 0.72);
+    transition: all 0.2s ease;
+}
+
+.neu-button-danger:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(135deg, #F6ECEC 0%, #FCF8F8 100%);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ECEDF1;
+    color: #6F6F6F;
+}
+
+.neu-info-card {
+    border: 1px solid #E3DAFF;
+    border-radius: 24px;
+    padding: 20px 22px;
+    background: #ECEDF1;
+    box-shadow:
+            -6px 6px 14px rgba(212, 213, 217, 0.25),
+            6px -6px 14px rgba(255, 255, 255, 0.85);
+}
+
+.neu-input-field {
+    box-sizing: border-box;
+    width: 100%;
+    height: 68px;
+    padding: 0 24px;
+    background: #ECEDF1;
+    border: 1px solid #DCD2FF;
+    border-radius: 9999px;
+    color: #777777;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.25s ease;
+    box-shadow:
+            -5px 5px 10px rgba(212, 213, 217, 0.2),
+            5px -5px 10px rgba(212, 213, 217, 0.2),
+            -5px -5px 10px rgba(255, 255, 255, 0.9),
+            5px 5px 13px rgba(212, 213, 217, 0.9),
+            inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+            inset -1px -1px 2px rgba(212, 213, 217, 0.5);
+}
+
+.neu-input-field::placeholder {
+    color: #B2B2B2;
+}
+
+.neu-input-field:hover,
+.neu-input-field:focus {
+    background: linear-gradient(135deg, #E0E1E5 0%, #F8F9FD 100%);
+    outline: none;
+}
+
+.neu-input-error {
+    border-color: #F2B8B5 !important;
+}
+
+.neu-primary-button {
+    height: 68px;
+    border: 1px solid #CDBEFF;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #D9CFFF 0%, #C9B8FF 100%);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow:
+            -6px 6px 14px rgba(212, 213, 217, 0.28),
+            6px -6px 14px rgba(255, 255, 255, 0.85);
+}
+
+.neu-primary-button:hover {
+    transform: translateY(-1px);
+    opacity: 0.96;
+}
+
+.neu-primary-button:active {
+    transform: translateY(0);
+    box-shadow:
+            inset 2px 2px 6px rgba(160, 140, 220, 0.28);
+}
+
+.neu-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.neu-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.neu-scrollbar::-webkit-scrollbar-thumb {
+    background: #D4C8FF;
+    border-radius: 9999px;
+}
