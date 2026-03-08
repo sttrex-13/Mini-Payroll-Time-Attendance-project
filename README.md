@@ -1,24 +1,48 @@
-# README
+# Mini Payroll & Time Attendance System :)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails assignment project for managing employees, tracking attendance, and calculating payroll.
 
-Things you may want to cover:
+This system allows companies to manage employee information, record daily attendance, and calculate overtime and salary with tax deduction.
 
-* Ruby version
+## Tech Stack
+* Ruby on Rails
+* PostgreSQL
+* Tailwind CSS
+* ERB (Embedded Ruby)
 
-* System dependencies
+## UI
 
-* Configuration
+> The system includes a simple dashboard UI built with Tailwind CSS.
 
-* Database creation
+### Main UI features:
+* Employee Dashboard
+* Check in / Check out buttons
+* Attendance history list
+* Payroll summary
+  
+UI focuses on readability rather than complex design.
 
-* Database initialization
+## AI Tools Used
 
-* How to run the test suite
+### AI tools used in this project:
+* OpenAI ChatGPT
+### AI was used for:
+* Debugging Rails code
+* Improving code readability
+* Assisting with wording for UI labels, messages, and user-facing text.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Scope Extension (Additional Improvements)
 
-* Deployment instructions
+### Additional features implemented beyond the basic requirement:
 
-* ...
+* Employee dashboard UI
+* Check-in / Check-out workflow
+* Attendance history display
+* Payroll summary on employee page
+* Scrollable attendance history
+* Admin role can view all employee data
+
+## Additional Instructions
+
+* A new employee must be created before logging into the system. Use the employee username to access the employee dashboard.
+* If an employee has the position "admin", they will have permission to view the information and attendance records of all employees.
