@@ -3,6 +3,7 @@ require "test_helper"
 class TimeAttendancesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @time_attendance = time_attendances(:one)
+    @employee = employees(:one)
   end
 
   test "should get index" do
@@ -10,17 +11,20 @@ class TimeAttendancesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get new" do
-    get new_time_attendance_url
-    assert_response :success
-  end
-
   test "should create time_attendance" do
-    assert_difference("TimeAttendance.count") do
-      post time_attendances_url, params: { time_attendance: { check_in_at: @time_attendance.check_in_at, check_out_at: @time_attendance.check_out_at, employee_id: @time_attendance.employee_id, overtime_hours: @time_attendance.overtime_hours, work_date: @time_attendance.work_date } }
+    assert_difference("TimeAttendance.count", 1) do
+      post employee_time_attendances_url(@employee), params: {
+        time_attendance: {
+          employee_id: @employee.id,
+          work_date: Date.new(2026, 3, 9),
+          check_in_at: Time.zone.local(2026, 3, 9, 9, 0, 0),
+          check_out_at: Time.zone.local(2026, 3, 9, 18, 0, 0),
+          overtime_hours: 1
+        }
+      }
     end
 
-    assert_redirected_to time_attendance_url(TimeAttendance.last)
+    assert_response :redirect
   end
 
   test "should show time_attendance" do
@@ -34,8 +38,18 @@ class TimeAttendancesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update time_attendance" do
-    patch time_attendance_url(@time_attendance), params: { time_attendance: { check_in_at: @time_attendance.check_in_at, check_out_at: @time_attendance.check_out_at, employee_id: @time_attendance.employee_id, overtime_hours: @time_attendance.overtime_hours, work_date: @time_attendance.work_date } }
-    assert_redirected_to time_attendance_url(@time_attendance)
+    patch time_attendance_url(@time_attendance), params: {
+      time_attendance: {
+        employee_id: @employee.id,
+        work_date: @time_attendance.work_date,
+        check_in_at: Time.zone.local(2026, 3, 8, 9, 0, 0),
+        check_out_at: Time.zone.local(2026, 3, 8, 18, 0, 0),
+        overtime_hours: 1
+      }
+    }
+
+    assert_response :see_other
+    assert_redirected_to employee_url(@employee)
   end
 
   test "should destroy time_attendance" do
@@ -43,6 +57,7 @@ class TimeAttendancesControllerTest < ActionDispatch::IntegrationTest
       delete time_attendance_url(@time_attendance)
     end
 
-    assert_redirected_to time_attendances_url
+    assert_response :see_other
+    assert_redirected_to employee_url(@employee)
   end
 end

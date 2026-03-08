@@ -1,30 +1,24 @@
 class EmployeesController < ApplicationController
-  before_action :set_employee, only: %i[ show edit update destroy ]
+  before_action :set_employee, only: %i[show edit update destroy]
 
-  # GET /employees or /employees.json
   def index
     @employees = Employee.all
   end
 
-  # GET /employees/1 or /employees/1.json
   def show
-    @employee = Employee.find(params[:id])
     @today_attendance = @employee.time_attendances
                                  .where(work_date: Date.current)
                                  .order(created_at: :desc)
                                  .first
   end
 
-  # GET /employees/new
   def new
     @employee = Employee.new
   end
 
-  # GET /employees/1/edit
   def edit
   end
 
-  # POST /employees or /employees.json
   def create
     @employee = Employee.new(employee_params)
 
@@ -39,7 +33,6 @@ class EmployeesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /employees/1 or /employees/1.json
   def update
     respond_to do |format|
       if @employee.update(employee_params)
@@ -52,7 +45,6 @@ class EmployeesController < ApplicationController
     end
   end
 
-  # DELETE /employees/1 or /employees/1.json
   def destroy
     @employee.destroy!
 
@@ -63,17 +55,16 @@ class EmployeesController < ApplicationController
   end
 
   def find_by_username
-    @employee = Employee.find_by(username: params[:username])
+    @employee = Employee.find_by(user_name: params[:username])
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_employee
-      @employee = Employee.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def employee_params
-      params.expect(employee: [ :user_name, :first_name, :last_name, :salary, :position ])
-    end
+  def set_employee
+    @employee = Employee.find(params[:id])
+  end
+
+  def employee_params
+    params.require(:employee).permit(:user_name, :first_name, :last_name, :salary, :position)
+  end
 end
