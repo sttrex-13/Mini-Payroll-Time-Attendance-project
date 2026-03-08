@@ -1,10 +1,89 @@
-<% content_for :title, "Editing time attendance" %>
+<% content_for :title, "Edit Time Attendance" %>
 
-<div class="md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">Editing time attendance</h1>
+<div class="w-full max-w-[1200px] px-6 py-10">
+  <div class="flex justify-start mb-8">
+    <div class="relative group">
+      <%= link_to employee_path(@time_attendance.employee),
+                  class: "neu-button flex items-center justify-center w-[72px] h-[72px]" do %>
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="w-5 h-5 rotate-180"
+             fill="#8F8F8F"
+             viewBox="0 0 24 24">
+          <path d="M23.124,9.879,18.538,5.293,17.124,6.707l4.262,4.263L0,11l0,2,21.446-.03-4.323,4.323,1.414,1.414,4.587-4.586A3.007,3.007,0,0,0,23.124,9.879Z"/>
+        </svg>
+      <% end %>
 
-  <%= render "form", time_attendance: @time_attendance %>
+      <span class="absolute top-1/2 right-22 -translate-y-1/2 whitespace-nowrap rounded-full bg-[#D4C8FF] px-3 py-2 text-[12px] text-white opacity-0 transition group-hover:opacity-100">
+        Back to Employee Dashboard
+      </span>
+    </div>
+  </div>
 
-  <%= link_to "Show this time attendance", @time_attendance, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-  <%= link_to "Back to time attendances", time_attendances_path, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16 items-center">
+    <div class="w-full">
+      <div class="neu-card p-8 md:p-10">
+        <div class="mb-8">
+          <p class="text-[14px] font-medium tracking-[0.08em] text-[#A0A0A0] uppercase">
+            Attendance Update
+          </p>
+
+          <h1 class="mt-2 text-[36px] font-semibold leading-11 text-[#6F6F6F]">
+            Edit Time Attendance
+          </h1>
+
+          <p class="mt-3 text-[16px] leading-7 text-[#A3A3A3]">
+            Update check-in, check-out, and overtime details to keep attendance records accurate.
+          </p>
+        </div>
+
+        <%= render "form", time_attendance: @time_attendance %>
+      </div>
+    </div>
+
+    <div class="flex h-full items-center">
+      <div class="max-w-[460px]">
+        <p class="text-[14px] font-medium tracking-[0.08em] text-[#A0A0A0] uppercase">
+          Quick Overview
+        </p>
+
+        <h2 class="mt-2 text-[32px] font-semibold leading-10 text-[#6F6F6F]">
+          Keep attendance records up to date
+        </h2>
+
+        <p class="mt-4 text-[16px] leading-7.5 text-[#9B9B9B]">
+          Update attendance details anytime to keep work history, overtime, and payroll information organized.
+        </p>
+
+        <div class="mt-8 space-y-4">
+          <div class="neu-info-card">
+            <div>
+              <p class="text-[16px] font-semibold text-[#7C7C7C]">Update Check-Out</p>
+              <p class="mt-1 text-[14px] leading-6 text-[#A3A3A3]">
+                Complete today’s work record by adding the correct check-out time.
+              </p>
+            </div>
+          </div>
+
+          <div class="neu-info-card">
+            <div>
+              <p class="text-[16px] font-semibold text-[#7C7C7C]">Review Overtime</p>
+              <p class="mt-1 text-[14px] leading-6 text-[#A3A3A3]">
+                Make sure overtime hours match the employee’s actual working time.
+              </p>
+            </div>
+          </div>
+
+          <div class="neu-info-card">
+            <div>
+              <p class="text-[16px] font-semibold text-[#7C7C7C]">Stay Accurate</p>
+              <p class="mt-1 text-[14px] leading-6 text-[#A3A3A3]">
+                Clear attendance data helps keep reporting and payroll calculations reliable.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
 </div>

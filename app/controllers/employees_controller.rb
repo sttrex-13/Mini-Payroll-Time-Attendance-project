@@ -8,6 +8,11 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1 or /employees/1.json
   def show
+    @employee = Employee.find(params[:id])
+    @today_attendance = @employee.time_attendances
+                                 .where(work_date: Date.current)
+                                 .order(created_at: :desc)
+                                 .first
   end
 
   # GET /employees/new

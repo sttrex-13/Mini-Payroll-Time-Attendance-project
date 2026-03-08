@@ -9,7 +9,11 @@ class TimeAttendancesController < ApplicationController
   # GET /time_attendances/1 or /time_attendances/1.json
   def show
     @employee = Employee.find(params[:id])
-    @today_attendance = @employee.time_attendances.find_by(work_date: Date.current)
+
+    @today_attendance = @employee.time_attendances
+                                 .where(work_date: Date.current, check_out_at: nil)
+                                 .order(created_at: :desc)
+                                 .first
   end
 
   # GET /time_attendances/new
@@ -37,25 +41,23 @@ class TimeAttendancesController < ApplicationController
 
   # PATCH/PUT /time_attendances/1 or /time_attendances/1.json
   def update
-    respond_to do |format|
-      if @time_attendance.update(time_attendance_params)
-        format.html { redirect_to @time_attendance, notice: "Time attendance was successfully updated.", status: :see_other }
-        format.json { render :show, status: :ok, location: @time_attendance }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @time_attendance.errors, status: :unprocessable_entity }
-      end
+    if @time_attendance.update(time_attendance_params)
+      redirect_to employee_path(@time_attendance.employee),
+                  notice: "Time attendance was successfully updated.",
+                  status: :see_other
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
   # DELETE /time_attendances/1 or /time_attendances/1.json
   def destroy
+    employee = @time_attendance.employee
     @time_attendance.destroy!
 
-    respond_to do |format|
-      format.html { redirect_to time_attendances_path, notice: "Time attendance was successfully destroyed.", status: :see_other }
-      format.json { head :no_content }
-    end
+    redirect_to employee_path(employee),
+                notice: "Time attendance was successfully destroyed.",
+                status: :see_other
   end
 
   private
