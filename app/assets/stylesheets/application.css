@@ -69,3 +69,66 @@
     box-shadow: inset 2px 2px 5px rgba(212, 213, 217, 0.6),
     inset -2px -2px 5px rgba(255, 255, 255, 0.8);
 }
+
+.neu-card {
+    border: 1px solid #E2D9FF;
+    border-radius: 36px;
+    background: #ECEDF1;
+    box-shadow:
+            -12px 12px 24px rgba(212, 213, 217, 0.42),
+            12px -12px 24px rgba(255, 255, 255, 0.9),
+            inset 1px 1px 2px rgba(255, 255, 255, 0.4),
+            inset -1px -1px 2px rgba(212, 213, 217, 0.35);
+}
+
+.neu-attendance-row {
+    border: 1px solid #DDD2FF;
+    border-radius: 9999px;
+    background: #ECEDF1;
+    box-shadow:
+            -8px 8px 16px rgba(212, 213, 217, 0.22),
+            8px -8px 16px rgba(255, 255, 255, 0.82);
+}
+
+.neu-empty-state {
+    border: 1px solid #E2D9FF;
+    border-radius: 32px;
+    background: #ECEDF1;
+    box-shadow:
+            -10px 10px 18px rgba(212, 213, 217, 0.25),
+            10px -10px 18px rgba(255, 255, 255, 0.82);
+}
+
+.neu-pill-success {
+    border: 1px solid #9ED9AA;
+    border-radius: 9999px;
+    background: #ECEDF1;
+    box-shadow:
+            -6px 6px 12px rgba(212, 213, 217, 0.18),
+            6px -6px 12px rgba(255, 255, 255, 0.78);
+    transition: all 0.2s ease;
+}
+
+.neu-pill-success:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(135deg, #E9F6EB 0%, #F8FCF9 100%);
+}
+
+.neu-button-danger {
+    box-sizing: border-box;
+    border: 1px solid #E9CFCF;
+    border-radius: 9999px;
+    background: #ECEDF1;
+    cursor: pointer;
+    box-shadow:
+            -5px 5px 10px rgba(212, 213, 217, 0.18),
+            5px -5px 10px rgba(212, 213, 217, 0.18),
+            -5px -5px 10px rgba(255, 255, 255, 0.85),
+            5px 5px 13px rgba(212, 213, 217, 0.72);
+    transition: all 0.2s ease;
+}
+
+.neu-button-danger:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(135deg, #F6ECEC 0%, #FCF8F8 100%);
+}
