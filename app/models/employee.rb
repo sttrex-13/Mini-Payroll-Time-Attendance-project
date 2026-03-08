@@ -1,5 +1,5 @@
 class Employee < ApplicationRecord
-  has_many :time_attendances
+  has_many :time_attendances, dependent: :destroy
 
   validates :user_name, presence: true, uniqueness: true
   validates :first_name, presence: true

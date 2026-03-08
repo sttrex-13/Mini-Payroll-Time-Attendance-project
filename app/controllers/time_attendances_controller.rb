@@ -8,11 +8,14 @@ class TimeAttendancesController < ApplicationController
 
   # GET /time_attendances/1 or /time_attendances/1.json
   def show
+    @employee = Employee.find(params[:id])
+    @today_attendance = @employee.time_attendances.find_by(work_date: Date.current)
   end
 
   # GET /time_attendances/new
   def new
-    @time_attendance = TimeAttendance.new
+    @employee = Employee.find(params[:employee_id])
+    @time_attendance = @employee.time_attendances.build
   end
 
   # GET /time_attendances/1/edit
@@ -21,16 +24,14 @@ class TimeAttendancesController < ApplicationController
 
   # POST /time_attendances or /time_attendances.json
   def create
-    @time_attendance = TimeAttendance.new(time_attendance_params)
+    @employee = Employee.find(params[:employee_id])
+    @time_attendance = @employee.time_attendances.build(time_attendance_params)
+    @time_attendance.work_date = Date.current
 
-    respond_to do |format|
-      if @time_attendance.save
-        format.html { redirect_to @time_attendance, notice: "Time attendance was successfully created." }
-        format.json { render :show, status: :created, location: @time_attendance }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @time_attendance.errors, status: :unprocessable_entity }
-      end
+    if @time_attendance.save
+      redirect_to employee_path(@employee), notice: "Attendance record was created successfully."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -60,11 +61,11 @@ class TimeAttendancesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_time_attendance
-      @time_attendance = TimeAttendance.find(params.expect(:id))
+      @time_attendance = TimeAttendance.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def time_attendance_params
-      params.expect(time_attendance: [ :employee_id, :work_date, :check_in_at, :check_out_at, :overtime_hours ])
-    end
+  def time_attendance_params
+    params.require(:time_attendance).permit(:work_date, :check_in_at, :check_out_at, :overtime_hours)
+  end
 end

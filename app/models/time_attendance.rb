@@ -3,9 +3,9 @@ class TimeAttendance < ApplicationRecord
 
   validates :work_date, presence: true
   validates :check_in_at, presence: true
-  validates :check_out_at, presence: true
 
   validate :check_out_must_be_after_check_in
+  validates :work_date, uniqueness: { scope: :employee_id, message: "already has attendance for this employee today" }
 
   before_validation :calculate_overtime_hours
 

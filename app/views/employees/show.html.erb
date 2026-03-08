@@ -13,7 +13,7 @@
     <div class="relative group shrink-0">
       <%= link_to pages_home_path,
                   class: "neu-button flex h-[72px] w-[72px] items-center justify-center" do %>
-        <svg xmlns="http://www.w3.org/2000/svg"
+        <svg xmlns="http://www.w3.org/2000/svg"x
              class="h-5 w-5 rotate-180"
              fill="#8F8F8F"
              viewBox="0 0 24 24">
@@ -41,7 +41,7 @@
       <div class="neu-card px-10 py-9 min-h-[420px]">
         <div class="mb-6 flex items-start justify-between">
           <div>
-            <p class="text-[14px] font-semibold uppercase tracking-[0.08em] text-[#C7B8FF]">
+            <p class="text-[14px] font-semibold uppercase tracking-[0.08em] text-[#A38AFF]">
               <%= @employee.user_name || "EMPLOYEE" %>
             </p>
 
@@ -99,29 +99,25 @@
 
     <div>
       <div class="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div>
-          <p class="text-[28px] leading-9.5 text-[#9C9C9C]">
-            <% if @employee.time_attendances.where(work_date: Date.current).exists? %>
-              Today’s activity is ready to view.
-            <% else %>
-              You haven’t checked in today.<br>
-              Start your day by checking in.
-            <% end %>
-          </p>
-        </div>
 
-        <div class="shrink-0">
-          <%= link_to new_time_attendance_path,
-                      class: "neu-pill-success flex h-[52px] w-[160px] items-center justify-center text-[18px] font-medium text-[#7BC58A]" do %>
+        <div class="ml-auto flex flex-row gap-4 items-end">
+          <%= link_to new_employee_time_attendance_path(@employee),
+                      class: "neu-pill-success flex h-[52px] w-[160px] items-center justify-center text-[18px] font-[500] text-[#7BC58A]" do %>
             Check in
           <% end %>
+
+          <%= link_to new_employee_time_attendance_path(@employee),
+                      class: "neu-pill-waring flex h-[52px] w-[160px] items-center justify-center text-[18px] font-[500] text-[#FFB55A]" do %>
+            Check out
+          <% end %>
         </div>
+
       </div>
 
-      <div class="space-y-5">
+      <div class="space-y-5 h-90 pr-5 overflow-y-scroll">
         <% if @employee.time_attendances.any? %>
           <% @employee.time_attendances.order(work_date: :desc).each do |time_attendance| %>
-            <div class="flex items-center gap-5">
+            <div class="flex items-center gap-5 ">
               <div class="min-w-0 flex-1">
                 <%= render "time_attendances/time_attendance", time_attendance: time_attendance %>
               </div>

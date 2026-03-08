@@ -1,22 +1,24 @@
-<div id="<%= dom_id time_attendance %>" class="w-full sm:w-auto my-5 space-y-5">
-  <div>
-    <strong class="block font-medium mb-1">Employee:</strong>
-    <%= time_attendance.employee_id %>
+<div id="<%= dom_id time_attendance %>" class="flex justify-center w-full">
+
+  <div class="neu-input flex items-center gap-4 px-6 py-3 w-[97%] h-18.75">
+
+    <div class="w-full text-center">
+      <strong class="block font-medium mb-1 text-[#9A9A9A]">Work date</strong>
+      <span class="text-[#A38AFF]"><%= format_date(time_attendance.work_date) %></span>
+    </div>
+    <div class="w-full text-center">
+      <strong class="block font-medium mb-1 text-[#9A9A9A]">Check in at</strong>
+      <span class="text-[#A38AFF]"><%= format_time(time_attendance.check_in_at) %></span>
+    </div>
+    <div class="w-full text-center">
+      <strong class="block font-medium mb-1 text-[#9A9A9A]">Check out at</strong>
+      <span class="text-[#A38AFF]"><%= format_time(time_attendance.check_out_at).presence || "—" %></span>
+    </div>
+    <div class="w-full text-center">
+      <strong class="block font-medium mb-1 text-[#9A9A9A]">OT hours</strong>
+      <span class="text-[#A38AFF]"><%= time_attendance.overtime_hours.presence || "—" %></span>
+    </div>
+
   </div>
-  <div>
-    <strong class="block font-medium mb-1">Work date:</strong>
-    <%= time_attendance.work_date %>
-  </div>
-  <div>
-    <strong class="block font-medium mb-1">Check in at:</strong>
-    <%= time_attendance.check_in_at %>
-  </div>
-  <div>
-    <strong class="block font-medium mb-1">Check out at:</strong>
-    <%= time_attendance.check_out_at %>
-  </div>
-  <div>
-    <strong class="block font-medium mb-1">Overtime hours:</strong>
-    <%= time_attendance.overtime_hours %>
-  </div>
+
 </div>
