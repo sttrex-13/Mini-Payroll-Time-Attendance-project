@@ -11,32 +11,32 @@
     </div>
   <% end %>
 
-  <div class="my-5 flex flex-col">
-    <%= form.label :user_name %>
-    <%= form.text_field :user_name, class: "neu-input text-[#B2B2B2]" %>
+  <div class="my-5 flex flex-row w-100 justify-between items-center">
+    <%= form.label :user_name, class:"text-[#B2B2B2]" %>
+    <%= form.text_field :user_name, class: "neu-input text-[#B2B2B2] w-[300px] h-[50px] pl-6" %>
   </div>
 
-  <div class="my-5 flex flex-col">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name, class: "neu-input text-[#B2B2B2]" %>
+  <div class="my-5 flex flex-row w-100 justify-between items-center">
+    <%= form.label :first_name, class:"text-[#B2B2B2]" %>
+    <%= form.text_field :first_name, class: "neu-input text-[#B2B2B2] w-[300px] h-[50px] pl-6" %>
   </div>
 
-  <div class="my-5 flex flex-col">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, class: "neu-input text-[#B2B2B2]" %>
+  <div class="my-5 flex flex-row w-100 justify-between items-center">
+    <%= form.label :last_name, class:"text-[#B2B2B2]" %>
+    <%= form.text_field :last_name, class: "neu-input text-[#B2B2B2] w-[300px] h-[50px] pl-6" %>
   </div>
 
-  <div class="my-5 flex flex-col">
-    <%= form.label :salary %>
-    <%= form.text_field :salary, class: "neu-input text-[#B2B2B2]" %>
+  <div class="my-5 flex flex-row w-100 justify-between items-center">
+    <%= form.label :salary, class:"text-[#B2B2B2]" %>
+    <%= form.text_field :salary, class: "neu-input text-[#B2B2B2] w-[300px] h-[50px] pl-6" %>
   </div>
 
-  <div class="my-5 flex flex-col">
-    <%= form.label :position %>
-    <%= form.text_field :position, class: "neu-input text-[#B2B2B2]" %>
+  <div class="my-5 flex flex-row w-100 justify-between items-center">
+    <%= form.label :position, class:"text-[#B2B2B2]" %>
+    <%= form.text_field :position, class: "neu-input text-[#B2B2B2] w-[300px] h-[50px] pl-6" %>
   </div>
 
-  <div class="inline">
-    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  <div class="my-5 w-100 grid justify-items-end-safe ">
+    <%= form.submit "Register", class: "neu-input text-[#B2B2B2] w-50 h-[50px] " %>
   </div>
 <% end %>
